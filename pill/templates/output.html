@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}- Output{% endblock %}
+
+{% block content %}
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 panel panel-default">
+
+                {% for pill in pill.all %}
+
+                <p><img src="{% get_static_prefix %}{{pill.id}}.jpg" width="210" height="120"></p>
+
+
+
+                <p>제품명 : {{ pill.name }} </p>
+                <p>제조 : {{ pill.corporation }} </p>
+                <p>효능 : {{ pill.effect }} </p>
+                <p>용량 : {{ pill.dosage }} </p>
+
+                {% endfor %}
+
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+
+
+{% endblock %}
